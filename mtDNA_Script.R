@@ -1,4 +1,4 @@
-avc <- read.csv('mtDNA_Variants/AvC - Sheet1.csv')
+avc <- read.csv('AvC.csv')
 ## For each position, select row indexes in which the exon isn't an empty
 ## value. 
 uniques <- c()
@@ -51,7 +51,7 @@ ggplot(avc, aes(x=BP, y=logOR, label = Mutation, fill = MT_Locus,
          col = guide_legend(ncol = 3))
 
 ## Do the same for inactive vs control
-ivc <- read.csv('mtDNA_Variants/mito_IvC_spreadsheet.csv')
+ivc <- read.csv('IvC.csv')
 uniques <- c()
 for(x in levels(factor(ivc[,'BP']))){
   y <- rownames(ivc[ivc[,'BP']==x & ivc[,'EXON']!="-",])
